@@ -1,7 +1,7 @@
 <h1>ToDos List</h1>
 <ul>
-  <%= @listings.each do |l| %>
-    <li><%= l.description %> <%= link_to "Edit", edit_listing_path(l.id) %></li>
+  <% @listings.each do |l| %>
+    <li><%= link_to l.description, listing_path(l) %>,  <%= link_to "Edit", edit_listing_path(l.id) %>, <%= link_to "[Delete]", l, method: :delete, data: { confirm: "Are you sure?" } %></li>
   <% end %>
 </ul>
 <br/>

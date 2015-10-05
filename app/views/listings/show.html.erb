@@ -1,0 +1,6 @@
+<h1>View your ToDo</h1>
+<p>
+  <%= @listing.description %>
+</p>
+<p><%= link_to "Edit ths ToDo", edit_listing_path(@listing) %></p>
+<p><%= link_to "Back", root_path %></p>
