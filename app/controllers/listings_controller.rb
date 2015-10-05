@@ -19,6 +19,19 @@ class ListingsController < ApplicationController
     @listing = Listing.new
   end
   
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+  
+  def update
+    @listing = Listing.find(params[:id])
+    if @listing.update(listing_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+  
   private
     def listing_params
       params.require(:listing).permit(:description)

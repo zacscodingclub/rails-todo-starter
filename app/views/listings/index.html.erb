@@ -1,7 +1,7 @@
 <h1>ToDos List</h1>
 <ul>
   <%= @listings.each do |l| %>
-    <li><%= l.description %></li>
+    <li><%= l.description %> <%= link_to "Edit", edit_listing_path(l.id) %></li>
   <% end %>
 </ul>
 <br/>
