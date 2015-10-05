@@ -1,8 +1,9 @@
 <h1>ToDos List</h1>
 <ul>
   <%= @listings.each do |l| %>
-    <li>
-      <%= l.id %>, <%= l.description %>
-    </li>
+    <li><%= l.description %></li>
   <% end %>
 </ul>
+<br/>
+
+<%= link_to "Add a new todo", new_listing_path %>
