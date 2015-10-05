@@ -1,0 +1,18 @@
+<% if obj.errors.any? %>
+  <h2>There was an error in your submission.</h2>
+  <ul>
+    <% obj.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for obj do |f| %>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit(obj.new_record? ? "Create ToDo" : "Update ToDo" ) %>
+  </p>
+<% end %>
